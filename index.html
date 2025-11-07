@@ -4,47 +4,76 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Greenline AI Version 1.0</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712103.png" />
+  <meta name="description" content="Greenline Assistant v1.0 — click the chat icon in the bottom-right to start talking." />
+  <meta name="theme-color" content="#0d1117" />
+  <link rel="icon" href="logo.png" />
+
   <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #f0f6fc;
+      --muted: #8b949e;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: system-ui, sans-serif;
-      background-color: #0d1117;
-      color: #f0f6fc;
+      background-color: var(--bg);
+      color: var(--fg);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       text-align: center;
+      line-height: 1.5;
     }
 
     header {
       margin-bottom: 1rem;
     }
 
+    /* ✅ Responsive logo */
+    .logo {
+      max-width: clamp(80px, 20vw, 140px);
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+    }
+
     h1 {
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
       margin-bottom: 0.5rem;
     }
 
     p {
-      color: #8b949e;
+      color: var(--muted);
       max-width: 500px;
+      margin: 0 auto;
+      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
     }
 
     footer {
       margin-top: 2rem;
       font-size: 0.85rem;
-      color: #8b949e;
+      color: var(--muted);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
+    <img src="logo.png" alt="Greenline Logo" class="logo" />
     <h1>Greenline Assistant Version 1.0</h1>
-    <p>To start talking, click the chat icon on the bottom right</p>
+    <p>Click the chat icon in the bottom-right to start talking.</p>
   </header>
 
   <footer>
